@@ -108,6 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f27ba94427993f4390f4532fdd220df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 1, g: 1, b: 1, a: 0}
+  failingColor: {r: 0.2264151, g: 0.22298416, b: 0.21039516, a: 0}
+  timeToNextPossibleOccurrence: 0
 --- !u!1 &7268297233504184037
 GameObject:
   m_ObjectHideFlags: 0
