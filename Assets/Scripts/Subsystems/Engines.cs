@@ -39,7 +39,7 @@ public class Engines : MonoBehaviour, ISubsystem {
     }
 
     private void ActivateEffect() {
-        gameDirector.SetSpeed(maxHealth - componentHealth);
+        gameDirector.SetSpeed(GetPercentHealth());
     }
 
     public override string ToString()

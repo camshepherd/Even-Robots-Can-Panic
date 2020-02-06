@@ -50,7 +50,7 @@ public class RepairController : MonoBehaviour
                     {
                         cogs.transform.Rotate(0.0f, 4.0f, 0.0f);
                         repair_time += Time.deltaTime * ((shipComputer.GetHealth() / 100) + 0.4f);
-                        if (repair_time > 3.0f)
+                        if (repair_time > 0.5f)
                         {
                             hit.transform.GetComponentInParent<ISubsystem>().Repair();
                             repair_time = 0.0f;

@@ -98,12 +98,7 @@ public class GameDirector : MonoBehaviour {
     }
 
     public void SetSpeed(int speed) {
-        if (speed == 0) {
-            this.speed = baseSpeed;
-        }
-        else {
-            this.speed = baseSpeed / speed;
-        }
+        this.speed = (float)(baseSpeed * speed) / 100.0f;
     }
 
     private void DamageRandomSubsystem() {
@@ -128,7 +123,11 @@ public class GameDirector : MonoBehaviour {
                 Debug.Log("Object: " + subsystem);
                 if (iteration == choice && subsystem.GetHealth() > 0) {
                     subsystem.TakeDamage(damage);
-                    WindowsVoice.speak("The " + subsystem.ToString() + " is at " + subsystem.GetPercentHealth() + "% health");
+                    if(subsystem.GetPercentHealth() == 0)
+                    {
+                        WindowsVoice.speak("The " + subsystem.ToString() + " is at " + subsystem.GetPercentHealth() + "% health");
+                    }
+                    
                     hitDesignatedTarget = true;
                     subsystemHit = subsystem;
                     Debug.Log(subsystem.GetType() + " took " + damage + " amount of damage.");
@@ -141,7 +140,10 @@ public class GameDirector : MonoBehaviour {
                 foreach (ISubsystem subsystem in subsystems) {
                     if (subsystem.GetHealth() > 0) {
                         subsystem.TakeDamage(damage);
-                        WindowsVoice.speak("The " + subsystem.ToString() + " is at " + subsystem.GetPercentHealth() + "% health");
+                        if (subsystem.GetPercentHealth() == 0)
+                        {
+                            WindowsVoice.speak("The " + subsystem.ToString() + " is at " + subsystem.GetPercentHealth() + "% health");
+                        }
                         hitDesignatedTarget = true;
                         subsystemHit = subsystem;
                         Debug.Log(subsystem.GetType() + " took " + damage + " amount of damage.");
