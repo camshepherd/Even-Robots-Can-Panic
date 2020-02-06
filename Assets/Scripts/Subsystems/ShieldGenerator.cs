@@ -27,7 +27,11 @@ public class ShieldGenerator : MonoBehaviour, ISubsystem {
     }
 
     public void Repair() {
-        this.componentHealth = maxHealth;
+        this.componentHealth += 10;
+        if(this.componentHealth > maxHealth)
+        {
+            componentHealth = maxHealth;
+        }
         ActivateEffect();
         if (GetPercentHealth() == 100)
         {

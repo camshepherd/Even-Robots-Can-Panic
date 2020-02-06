@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2235039044640378463}
   - component: {fileID: 2235039044640378456}
   - component: {fileID: 2235039044640378457}
-  - component: {fileID: 3166171654596418338}
   m_Layer: 0
   m_Name: Step Light
   m_TagString: Untagged
@@ -96,21 +95,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &3166171654596418338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2235039044640378458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f27ba94427993f4390f4532fdd220df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalColor: {r: 1, g: 1, b: 1, a: 0}
-  failingColor: {r: 0.5319453, g: 0.5377358, b: 0.2916963, a: 0}
-  timeToNextPossibleOccurrence: 0
 --- !u!1 &2235039045182771808
 GameObject:
   m_ObjectHideFlags: 0
