@@ -1171,6 +1171,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5654822932173886280, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5654822932173886282, guid: 517fc3dcc74c3cd449122aadde3429fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1243,6 +1248,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 517fc3dcc74c3cd449122aadde3429fe, type: 3}
+--- !u!1 &437560242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5654822933689788677, guid: 517fc3dcc74c3cd449122aadde3429fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 437560241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!45 &437560243
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437560242}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 81f714daf7144784b8a2f42f1cd30927, type: 2}
 --- !u!1001 &444623342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4179,7 +4199,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 85abadfdae3185e43acbe3fb00455345, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.42
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
