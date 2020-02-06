@@ -108,36 +108,57 @@ public class GameDirector : MonoBehaviour {
 
     private void DamageRandomSubsystem() {
         List<ISubsystem> subsystems = gameController.GetSubsystems();
-        int choice = Random.Range(0, subsystems.Count - 1);
-        Debug.Log("Choice: " + choice);
-        Debug.Log("Count: " + subsystems.Count);
-        int damage = Random.Range(60, 100);
+        float totalDamage = Random.Range(60, 121);
+        int numberOfTargets = Random.Range(2, 5);
+        int mainHit = (int) ((float) totalDamage * (Random.Range(30, 61) / 100f));
+        int secondaryHits = ((int)((totalDamage - (float) mainHit) / (numberOfTargets - 1)));
         int iteration = 0;
-        foreach (ISubsystem subsystem in subsystems) {
-            Debug.Log("Iteration: " + iteration);
-            Debug.Log("Object: " + subsystem);
-            if (choice == iteration && subsystem.GetHealth() > 0) {
-                subsystem.TakeDamage(damage);
-                WindowsVoice.speak("The " + subsystem.ToString() + " is at " + subsystem.GetPercentHealth() + "% health");
-                return;
-            }
-            else {
-                iteration++;
-            }
-        }
-        //Damage first subsystem found with HP
-        foreach (ISubsystem subsystem in subsystems)
-        {
-            if (subsystem.GetHealth() > 0)
-            {
-                subsystem.TakeDamage(damage);
-                return;
-            }
-        }
+        int choice = 0;
+        int damage = mainHit;
+        bool hitDesignatedTarget = false;
+        ISubsystem subsystemHit;
 
-        // If all subsystems
-        DamageShip();
-        WindowsVoice.speak("Hull strength is at " + GetShipHealthPercent() + "%");
+        for (int hit = 0; hit < numberOfTargets; hit++) {
+            choice = Random.Range(0, subsystems.Count);
+            iteration = 0;
+            hitDesignatedTarget = false;
+            subsystemHit = null;
+            foreach (ISubsystem subsystem in subsystems) {
+                Debug.Log("Iteration: " + iteration);
+                Debug.Log("Object: " + subsystem);
+                if (iteration == choice && subsystem.GetHealth() > 0) {
+                    subsystem.TakeDamage(damage);
+                    WindowsVoice.speak("The " + subsystem.ToString() + " is at " + subsystem.GetPercentHealth() + "% health");
+                    hitDesignatedTarget = true;
+                    subsystemHit = subsystem;
+                    Debug.Log(subsystem.GetType() + " took " + damage + " amount of damage.");
+                    break;
+                } else {
+                    iteration++;
+                }
+            }
+            if (!hitDesignatedTarget) {
+                foreach (ISubsystem subsystem in subsystems) {
+                    if (subsystem.GetHealth() > 0) {
+                        subsystem.TakeDamage(damage);
+                        WindowsVoice.speak("The " + subsystem.ToString() + " is at " + subsystem.GetPercentHealth() + "% health");
+                        hitDesignatedTarget = true;
+                        subsystemHit = subsystem;
+                        Debug.Log(subsystem.GetType() + " took " + damage + " amount of damage.");
+                        break;
+                    }
+                }
+            }
+            if (!hitDesignatedTarget) {
+                //Damage first subsystem found with HP
+                // If all subsystems
+                DamageShip();
+                WindowsVoice.speak("Hull strength is at " + GetShipHealthPercent() + "%");
+                return;
+            }
+            damage = secondaryHits;
+            subsystems.Remove(subsystemHit);
+        }
     }
 
     private void DamageShip() {
