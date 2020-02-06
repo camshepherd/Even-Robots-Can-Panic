@@ -49,8 +49,8 @@ public class RepairController : MonoBehaviour
                     if (Input.GetKey(KeyCode.E) && playerNum == 1 || Input.GetKey(KeyCode.Joystick1Button0) && playerNum == 2)
                     {
                         cogs.transform.Rotate(0.0f, 4.0f, 0.0f);
-                        repair_time += Time.deltaTime * ((shipComputer.GetHealth() / 100) + 0.4f);
-                        if (repair_time > 0.5f)
+                        repair_time += Time.deltaTime * ((shipComputer.GetHealth() / 100) + 0.6f);
+                        if (repair_time > 0.7f)
                         {
                             hit.transform.GetComponentInParent<ISubsystem>().Repair();
                             repair_time = 0.0f;
