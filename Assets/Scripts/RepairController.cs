@@ -14,12 +14,13 @@ public class RepairController : MonoBehaviour
     public float center;
 
     public float repair_time = 0.0f;
-
+    protected AudioSource speaker;
+    public AudioClip[] audioClips;
     public float detectDistance = 100f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        speaker = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +53,8 @@ public class RepairController : MonoBehaviour
                         {
                             hit.transform.GetComponentInParent<ISubsystem>().Repair();
                             repair_time = 0.0f;
+                            speaker.clip = audioClips[0];
+                            speaker.Play();
                         }
                     }
                     else if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Joystick1Button0))
