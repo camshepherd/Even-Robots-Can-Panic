@@ -7,7 +7,7 @@ public class RepairController : MonoBehaviour
 {
 
     public Camera cam;
-
+    public ShipComputer shipComputer;
 
     public GameObject cogs;
     
@@ -21,6 +21,7 @@ public class RepairController : MonoBehaviour
     void Start()
     {
         speaker = GetComponent<AudioSource>();
+        shipComputer = GameObject.FindObjectOfType<ShipComputer>();
     }
 
     // Update is called once per frame
@@ -48,8 +49,8 @@ public class RepairController : MonoBehaviour
                     if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Joystick1Button0))
                     {
                         cogs.transform.Rotate(0.0f, 4.0f, 0.0f);
-                        repair_time += Time.deltaTime;
-                        if (repair_time > 2.0f)
+                        repair_time += Time.deltaTime * ((shipComputer.GetHealth() / 100) + 0.4f);
+                        if (repair_time > 3.0f)
                         {
                             hit.transform.GetComponentInParent<ISubsystem>().Repair();
                             repair_time = 0.0f;
