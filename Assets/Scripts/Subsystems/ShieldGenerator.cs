@@ -19,16 +19,10 @@ public class ShieldGenerator : MonoBehaviour, ISubsystem {
     }
 
     public void TakeDamage(int damageAmount) {
-        int initialHealth = this.componentHealth;
-        this.componentHealth += 10;
-        ActivateEffect();
-        if (this.componentHealth > maxHealth)
+        this.componentHealth = Mathf.Max(0, this.componentHealth - damageAmount);
+        if (componentHealth == 0)
         {
-            this.componentHealth = maxHealth;
-        }
-        if (GetPercentHealth() == 100 && initialHealth < maxHealth)
-        {
-            WindowsVoice.speak("The " + ToString() + " has been repaired");
+            ActivateEffect();
         }
     }
 
