@@ -1228,6 +1228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 801311249}
   shipComputer: {fileID: 0}
+  playerNum: 1
   cogs: {fileID: 2017519734}
   center: 1
   repair_time: 0
@@ -4124,6 +4125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 717465008}
   shipComputer: {fileID: 0}
+  playerNum: 2
   cogs: {fileID: 477562095}
   center: 3
   repair_time: 0

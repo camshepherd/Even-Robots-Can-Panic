@@ -8,7 +8,7 @@ public class RepairController : MonoBehaviour
 
     public Camera cam;
     public ShipComputer shipComputer;
-
+    public int playerNum;
     public GameObject cogs;
     
     public float center;
@@ -46,7 +46,7 @@ public class RepairController : MonoBehaviour
                 {
                     cogs.GetComponent<Image>().color = Color.white;
 
-                    if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Joystick1Button0))
+                    if (Input.GetKey(KeyCode.E) && playerNum == 1 || Input.GetKey(KeyCode.Joystick1Button0) && playerNum == 2)
                     {
                         cogs.transform.Rotate(0.0f, 4.0f, 0.0f);
                         repair_time += Time.deltaTime * ((shipComputer.GetHealth() / 100) + 0.4f);
@@ -58,9 +58,15 @@ public class RepairController : MonoBehaviour
                             speaker.Play();
                         }
                     }
-                    else if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Joystick1Button0))
+                    else if (Input.GetKeyUp(KeyCode.E) && playerNum == 1 || Input.GetKeyUp(KeyCode.Joystick1Button0) && playerNum == 2)
                     {
                         repair_time = 0.0f;
+                        cogs.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    }
+                    else
+                    {
+                        repair_time = 0.0f;
+                        cogs.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                     }
                 }
              }
