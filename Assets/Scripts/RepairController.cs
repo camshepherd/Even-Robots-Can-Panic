@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RepairController : MonoBehaviour
 {
@@ -34,19 +35,29 @@ public class RepairController : MonoBehaviour
                    Debug.Log(hit.transform.name);
 
                    Debug.Log(hit.transform.GetComponentInParent<ISubsystem>().GetHealth());
+                if (hit.transform.GetComponentInParent<ISubsystem>().GetPercentHealth() >= 100)
+                {
+                    cogs.GetComponent<Image>().color = Color.red;
+                    cogs.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                }
+                else
+                {
+                    cogs.GetComponent<Image>().color = Color.white;
 
-                if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Joystick1Button0)) { 
-                    cogs.transform.Rotate(0.0f, 4.0f, 0.0f);
-                    repair_time += Time.deltaTime;
-                    if(repair_time > 2.0f)
+                    if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Joystick1Button0))
                     {
-                        hit.transform.GetComponentInParent<ISubsystem>().Repair();
+                        cogs.transform.Rotate(0.0f, 4.0f, 0.0f);
+                        repair_time += Time.deltaTime;
+                        if (repair_time > 2.0f)
+                        {
+                            hit.transform.GetComponentInParent<ISubsystem>().Repair();
+                            repair_time = 0.0f;
+                        }
+                    }
+                    else if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Joystick1Button0))
+                    {
                         repair_time = 0.0f;
                     }
-                }
-                else if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Joystick1Button0))
-                {
-                    repair_time = 0.0f;
                 }
              }
         }
