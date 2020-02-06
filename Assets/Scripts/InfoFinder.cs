@@ -16,6 +16,7 @@ public class InfoFinder : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         canvasObject.enabled = true;
+        machineName.enabled = true;
         machineName.text = "SUPER TEXT";
     }
 
@@ -30,6 +31,7 @@ public class InfoFinder : MonoBehaviour
             (hit.collider.gameObject.CompareTag("Machine") || hit.collider.transform.GetChild(0).CompareTag("Machine")))
         {
             canvasObject.enabled = true;
+            machineName.enabled = true;
             ISubsystem subsystem = hit.transform.GetComponentInParent<ISubsystem>();
 
             machineName.text = "" + subsystem.ToString() + ": Press R/Q or Controller Y for info";
@@ -41,6 +43,7 @@ public class InfoFinder : MonoBehaviour
         else
         {
             canvasObject.enabled = false;
+            machineName.enabled = true;
         }
 
     }

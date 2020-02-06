@@ -211,7 +211,12 @@ PrefabInstance:
     - target: {fileID: 1831734992371743187, guid: daf85dca19ffce14a8318b87ef34b1b7,
         type: 3}
       propertyPath: m_Name
-      value: InfoCanvas
+      value: InfoCanvasPlayer1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862077531748269111, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_Name
+      value: VoiceBox1
       objectReference: {fileID: 0}
     - target: {fileID: 3870861274894674053, guid: daf85dca19ffce14a8318b87ef34b1b7,
         type: 3}
@@ -223,6 +228,11 @@ PrefabInstance:
       propertyPath: detectDistance
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3870861274894674053, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: canvasObject
+      value: 
+      objectReference: {fileID: 1481118208}
     - target: {fileID: 5654822932173886280, guid: daf85dca19ffce14a8318b87ef34b1b7,
         type: 3}
       propertyPath: m_Name
@@ -288,10 +298,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5654822933689788677, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerCamera1
+      objectReference: {fileID: 0}
     - target: {fileID: 5654822933689788679, guid: daf85dca19ffce14a8318b87ef34b1b7,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: daf85dca19ffce14a8318b87ef34b1b7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7256803773384342577, guid: daf85dca19ffce14a8318b87ef34b1b7,
         type: 3}
@@ -316,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 7438337386900142008, guid: daf85dca19ffce14a8318b87ef34b1b7,
         type: 3}
       propertyPath: m_Name
-      value: InfoText
+      value: InfoTextPlayer1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf85dca19ffce14a8318b87ef34b1b7, type: 3}
@@ -871,6 +936,7 @@ MonoBehaviour:
   cam: {fileID: 801311249}
   cogs: {fileID: 2017519734}
   center: 1
+  repair_time: 0
   detectDistance: 2
 --- !u!1001 &336014341
 PrefabInstance:
@@ -1166,6 +1232,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831734992371743187, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_Name
+      value: InfoCanvasPlayer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862077531748269111, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_Name
+      value: VoiceBox2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870861274894674053, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: machineName
+      value: 
+      objectReference: {fileID: 1408577060}
+    - target: {fileID: 3870861274894674053, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: canvasObject
+      value: 
+      objectReference: {fileID: 1234079922}
     - target: {fileID: 5654822932173886280, guid: 517fc3dcc74c3cd449122aadde3429fe,
         type: 3}
       propertyPath: m_Name
@@ -1231,6 +1317,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5654822933689788677, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerCamera2
+      objectReference: {fileID: 0}
     - target: {fileID: 5654822933689788679, guid: 517fc3dcc74c3cd449122aadde3429fe,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -1245,6 +1336,41 @@ PrefabInstance:
         type: 3}
       propertyPath: near clip plane
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160207564421195411, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438337386900142008, guid: 517fc3dcc74c3cd449122aadde3429fe,
+        type: 3}
+      propertyPath: m_Name
+      value: InfoTextPlayer2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 517fc3dcc74c3cd449122aadde3429fe, type: 3}
@@ -2807,6 +2933,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eecb5b28883eb44a45c3d9f9baf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &1234079922 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6897331711366652512, guid: 517fc3dcc74c3cd449122aadde3429fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 437560241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1253472718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3418,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548432eb68a9d854a8f2a504e350117e, type: 3}
+--- !u!223 &1481118208 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6897331711366652512, guid: daf85dca19ffce14a8318b87ef34b1b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 66346194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1528914100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3376,6 +3514,7 @@ MonoBehaviour:
   cam: {fileID: 717465008}
   cogs: {fileID: 477562095}
   center: 3
+  repair_time: 0
   detectDistance: 2
 --- !u!1001 &1555613187
 PrefabInstance:
