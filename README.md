@@ -13,5 +13,5 @@ You play as one of the two maintennance robots on a spaceship travelling to a fa
 This game is only buildable for 64-bit Windows due to our text-to-speech system. Developed in Unity 2019.3.0f6.
 
 ## Additional Credits
-All music and audio from [littlerobotsoundfactory](https://freesound.org/people/LittleRobotSoundFactory/)
+All music and audio from [LittleRobotSoundFactory](https://freesound.org/people/LittleRobotSoundFactory/)
 Automated voice system utilises Windows text to speech, and credits go to [ChadWeisshaar](https://chadweisshaar.com/blog/2015/07/02/microsoft-speech-for-unity/) and [Sewonist](https://github.com/sewonist/WindowsVoiceProject) for how to utilise it.
