@@ -26,22 +26,25 @@ public class WirelessCharging : MonoBehaviour, ISubsystem {
     }
 
     public void Repair() {
-        this.componentHealth = maxHealth;
+        int initialHealth = this.componentHealth;
+        this.componentHealth += 10;
         ActivateEffect();
-        if (GetPercentHealth() == 100)
+        if (this.componentHealth > maxHealth)
+        {
+            this.componentHealth = maxHealth;
+        }
+        if (GetPercentHealth() == 100 && initialHealth < maxHealth)
         {
             WindowsVoice.speak("The " + ToString() + " has been repaired");
         }
     }
 
     private void ActivateEffect() {
-        float size = (maxHealth - componentHealth) / 100f;
         LightController[] lights = FindObjectsOfType<LightController>();
         foreach (LightController light in lights)
         {
-            light.timeToNextPossibleOccurrence /= 2.0f;
+            light.timeToNextPossibleOccurrence = 0.0f;
         }
-        // this.visionBlackout.GetComponent<RectTransform>().sizeDelta = new Vector2(2000f * size, 2000f * size);
     }
 
     public override string ToString()

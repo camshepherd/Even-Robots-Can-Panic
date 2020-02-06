@@ -11,7 +11,9 @@ public class RepairController : MonoBehaviour
     public GameObject cogs;
     
     public float center;
-    
+
+    public float repair_time = 0.0f;
+
     public float detectDistance = 100f;
     // Start is called before the first frame update
     void Start()
@@ -33,14 +35,26 @@ public class RepairController : MonoBehaviour
 
                    Debug.Log(hit.transform.GetComponentInParent<ISubsystem>().GetHealth());
 
-                    if(Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Joystick1Button0)) {
-                        Debug.Log("Click");
+                if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Joystick1Button0)) { 
+                    cogs.transform.Rotate(0.0f, 4.0f, 0.0f);
+                    repair_time += Time.deltaTime;
+                    if(repair_time > 2.0f)
+                    {
                         hit.transform.GetComponentInParent<ISubsystem>().Repair();
+                        repair_time = 0.0f;
                     }
+                }
+                else if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Joystick1Button0))
+                {
+                    repair_time = 0.0f;
+                }
              }
-        }else {
-                cogs.SetActive(false);
-            }
+        }
+        else
+        {
+            cogs.SetActive(false);
+            cogs.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        }
 
              
 

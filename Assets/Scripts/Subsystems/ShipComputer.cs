@@ -26,9 +26,14 @@ public class ShipComputer : MonoBehaviour, ISubsystem {
     }
 
     public void Repair() {
-        this.componentHealth = maxHealth;
+        int initialHealth = this.componentHealth;
+        this.componentHealth += 10;
         ActivateEffect();
-        if (GetPercentHealth() == 100)
+        if(this.componentHealth > maxHealth)
+        {
+            this.componentHealth = maxHealth;
+        }
+        if (GetPercentHealth() == 100 && initialHealth < maxHealth)
         {
             WindowsVoice.speak("The " + ToString() + " has been repaired");
         }
