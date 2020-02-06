@@ -37,7 +37,7 @@ public class InfoFinder : MonoBehaviour
             machineName.text = "" + subsystem.ToString() + ": Press R/Q or Controller Y for info";
             if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Joystick1Button3))
             {
-                WindowsVoice.speak(subsystem.GetDescription());
+                WindowsVoice.speak("The" + subsystem.ToString() + " " + subsystem.GetDescription());
             }
         }
         else

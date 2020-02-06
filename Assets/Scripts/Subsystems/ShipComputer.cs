@@ -55,6 +55,6 @@ public class ShipComputer : MonoBehaviour, ISubsystem {
 
     public string GetDescription()
     {
-        return "Allows other systems to function";
+        return "Powers the repair functionality of the robots";
     }
 }
