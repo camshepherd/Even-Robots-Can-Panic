@@ -38,6 +38,14 @@ public class MainMenu : MonoBehaviour
                 }
                 SceneManager.LoadScene("TheGame");
             }            
-        }        
+        }
+        if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
+        {
+            SceneManager.LoadScene("Controls");
+        }
+        else if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
